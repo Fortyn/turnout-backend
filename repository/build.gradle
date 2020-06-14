@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'org.flywaydb.flyway' version '6.4.4'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+flyway {
+    url = 'jdbc:derby://localhost:1527/turnout'
+    user = 'admin'
+    password = 'admin'
+    driver = 'org.apache.derby.jdbc.ClientDriver'
+}
+dependencies {
+    implementation "org.apache.derby:derbyclient:$derby_client_ver"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springboot_ver"
+    implementation "org.hibernate:hibernate-core:$hibernate_orm_ver"
+
+    apiElements "org.springframework.data:spring-data-commons:$spring_data_ver"
+    apiElements "org.springframework.data:spring-data-jpa:$spring_data_ver"
+    apiElements "javax.persistence:javax.persistence-api:2.2"
+}
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'

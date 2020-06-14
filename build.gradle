@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+allprojects {
+    ext {
+        spring_security_ver = "5.2.2.RELEASE"
+        spring_ver = "5.2.4.RELEASE"
+        spring_data_ver = "2.2.5.RELEASE"
+        springboot_ver = "2.2.5.RELEASE"
+
+        derby_client_ver = '10.14.1.0'
+        hibernate_orm_ver = "5.4.12.Final"
+        liquibase_ver = "3.8.7"
+    }
+}
+dependencies {
+    implementation project(':repository')
+    implementation("org.springframework.boot:spring-boot-starter-web:$springboot_ver") {
+        exclude module: 'spring-boot-starter-tomcat'
+    }
+    implementation "org.springframework.boot:spring-boot-starter-jetty:$springboot_ver"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

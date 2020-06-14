@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:derby://localhost:1527/turnout
+    username: admin
+    password: admin
+    driver-class-name: org.apache.derby.jdbc.ClientDriver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.DerbyTenSevenDialect
+        jdbc:
+          use_get_generated_keys: true
