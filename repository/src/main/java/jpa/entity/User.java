@@ -1,5 +1,7 @@
 package jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 /**
@@ -22,6 +24,7 @@ public class User {
     @Column(nullable = false)
     private String lastName;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "user")
     private Credentials credentials;
 

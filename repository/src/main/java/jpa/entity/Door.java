@@ -1,5 +1,7 @@
 package jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 /**
@@ -13,6 +15,7 @@ public class Door {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(nullable = false)
     private Wall wall;

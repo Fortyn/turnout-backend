@@ -19,6 +19,7 @@ dependencies {
     implementation "org.apache.derby:derbyclient:$derby_client_ver"
     implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springboot_ver"
     implementation "org.hibernate:hibernate-core:$hibernate_orm_ver"
+    compileClasspath "com.fasterxml.jackson.core:jackson-databind:$jackson_ver"
 
     apiElements "org.springframework.data:spring-data-commons:$spring_data_ver"
     apiElements "org.springframework.data:spring-data-jpa:$spring_data_ver"

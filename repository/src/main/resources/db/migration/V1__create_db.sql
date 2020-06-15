@@ -1,7 +1,7 @@
 CREATE SCHEMA turnout;
 
 CREATE TABLE turnout.users (
-    id integer primary key generated always as identity (start with 1, increment by 1),
+    id integer primary key generated always as identity (start with 0, increment by 1),
     first_name varchar(60) not null,
     middle_name varchar(60),
     last_name varchar(60) not null

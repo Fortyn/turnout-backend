@@ -18,9 +18,12 @@ allprojects {
         derby_client_ver = '10.14.1.0'
         hibernate_orm_ver = "5.4.12.Final"
         liquibase_ver = "3.8.7"
+        jjwt_ver = '0.11.0'
+        jackson_ver = "2.10.2"
     }
 }
 dependencies {
+    implementation project(':security')
     implementation project(':repository')
     implementation("org.springframework.boot:spring-boot-starter-web:$springboot_ver") {
         exclude module: 'spring-boot-starter-tomcat'

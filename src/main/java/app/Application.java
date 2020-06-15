@@ -4,12 +4,13 @@ import jpa.JpaConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
+import security.SecurityConfig;
 
 /**
  * @author Georgy Sorokin
  */
 @SpringBootApplication
-@Import({JpaConfig.class})
+@Import({JpaConfig.class, SecurityConfig.class})
 public class Application {
     /**
      * Application entry point.

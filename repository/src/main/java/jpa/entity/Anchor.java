@@ -1,6 +1,9 @@
 package jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author Georgy Sorokin
@@ -24,6 +27,10 @@ public class Anchor {
 
     @Column(nullable = false)
     private String propertyValue;
+
+    @JsonBackReference
+    @ManyToMany(mappedBy = "anchors")
+    private List<Room> rooms;
 
     public Integer getId() {
         return id;
@@ -63,5 +70,13 @@ public class Anchor {
 
     public void setPropertyValue(String propertyValue) {
         this.propertyValue = propertyValue;
+    }
+
+    public List<Room> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(List<Room> rooms) {
+        this.rooms = rooms;
     }
 }
