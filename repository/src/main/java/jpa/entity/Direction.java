@@ -1,5 +1,7 @@
 package jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 /**
  * @author Georgy Sorokin
  */
@@ -13,5 +15,10 @@ public enum Direction {
 
     Direction(Integer id) {
         this.id = id;
+    }
+
+    @JsonValue
+    public Integer getId() {
+        return id;
     }
 }

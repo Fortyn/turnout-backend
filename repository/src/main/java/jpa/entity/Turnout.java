@@ -17,11 +17,11 @@ public class Turnout {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(name = "room_id", nullable = false)
     private Room room;
 
     @Column(nullable = false)

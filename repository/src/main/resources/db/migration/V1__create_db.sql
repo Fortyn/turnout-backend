@@ -23,7 +23,7 @@ create table turnout.rooms (
     id                 integer primary key generated always as identity (start with 1, increment by 1),
     lower_left_corner  integer not null,
     upper_right_corner integer not null,
-    floor              boolean not null,
+    identifier         varchar(10) not null,
     constraint llc foreign key (lower_left_corner) references turnout.points (id)
         on delete no action
         on update no action,

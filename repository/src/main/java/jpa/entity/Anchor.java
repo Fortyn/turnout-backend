@@ -1,6 +1,7 @@
 package jpa.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
@@ -25,6 +26,7 @@ public class Anchor {
     @Column(nullable = false)
     private String propertyName;
 
+    @JsonIgnore
     @Column(nullable = false)
     private String propertyValue;
 

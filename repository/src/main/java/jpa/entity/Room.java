@@ -25,7 +25,7 @@ public class Room {
     private Point upperRightCorner;
 
     @Column(nullable = false)
-    private Boolean floor;
+    private String identifier;
 
     @JsonManagedReference
     @OneToMany(mappedBy = "room", cascade = CascadeType.PERSIST)
@@ -65,12 +65,12 @@ public class Room {
         this.upperRightCorner = upperRightCorner;
     }
 
-    public Boolean getFloor() {
-        return floor;
+    public String getIdentifier() {
+        return identifier;
     }
 
-    public void setFloor(Boolean floor) {
-        this.floor = floor;
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
     }
 
     public List<Wall> getWalls() {
